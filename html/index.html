@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5ef">
+    <meta name="description" content="Explora razas de perros y descubre una foto aleatoria de cada una.">
+    <title>Explorador de perros</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Inicio, Explorador de perros">
+          <span class="brand-icon" aria-hidden="true">🐾</span>
+          <span>patitas<span class="brand-period">.</span></span>
+        </a>
+        <span class="header-note">Un mundo por descubrir</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Conoce a tu próximo favorito</p>
+          <h1 id="page-title">Cada perro tiene<br>una <span>gran historia.</span></h1>
+          <p class="hero-description">Explora razas, descubre sus nombres y encuentra una nueva carita para alegrarte el día.</p>
+
+          <form id="breed-form" class="search-form" novalidate>
+            <label for="breed-input">¿Qué raza quieres conocer?</label>
+            <div class="search-controls">
+              <div class="input-wrap">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                  id="breed-input"
+                  name="breed"
+                  type="text"
+                  list="breed-options"
+                  placeholder="Por ejemplo, golden retriever"
+                  autocomplete="off"
+                  aria-describedby="breed-hint breed-error"
+                  aria-invalid="false"
+                  required
+                >
+                <datalist id="breed-options"></datalist>
+              </div>
+              <button id="search-button" type="submit" disabled>Buscar raza <span aria-hidden="true">→</span></button>
+            </div>
+            <p id="breed-hint" class="field-hint">Escribe y elige una raza de la lista.</p>
+            <p id="breed-error" class="field-error" role="alert" hidden></p>
+          </form>
+
+          <p class="api-credit">Datos e imágenes cortesía de <a href="https://dog.ceo/dog-api/" target="_blank" rel="noreferrer">Dog CEO API</a>.</p>
+        </div>
+
+        <div class="hero-art" aria-label="Ilustración de un perro">
+          <div class="art-sun"></div>
+          <div class="art-sparkle sparkle-one" aria-hidden="true">✳</div>
+          <div class="art-sparkle sparkle-two" aria-hidden="true">✳</div>
+          <div class="art-card">
+            <span class="art-tag">¡Hola, amigo!</span>
+            <div class="dog-illustration" aria-hidden="true">
+              <span class="dog-ear dog-ear-left"></span>
+              <span class="dog-ear dog-ear-right"></span>
+              <span class="dog-face">
+                <span class="dog-eye dog-eye-left"></span>
+                <span class="dog-eye dog-eye-right"></span>
+                <span class="dog-muzzle"><span class="dog-nose"></span></span>
+              </span>
+              <span class="dog-body"></span>
+              <span class="dog-paw dog-paw-left"></span>
+              <span class="dog-paw dog-paw-right"></span>
+            </div>
+            <span class="art-heart" aria-hidden="true">♥</span>
+          </div>
+          <span class="art-caption">Buenos amigos,<br>grandes aventuras.</span>
+        </div>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">Nuestra colección</p>
+            <h2 id="results-title">Una raza para cada corazón</h2>
+          </div>
+          <p id="breed-count" class="breed-count" aria-live="polite">Cargando razas…</p>
+        </div>
+
+        <div id="status-message" class="status-message" role="status" aria-live="polite">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>Cargando razas de perros…</span>
+        </div>
+        <article id="result-card" class="result-card" hidden>
+          <div class="result-image-wrap">
+            <img id="result-image" alt="" class="result-image">
+          </div>
+          <div class="result-copy">
+            <p class="result-label">Tu descubrimiento</p>
+            <h3 id="result-name"></h3>
+            <p id="result-description">Una nueva carita para conocer. ¡Cada perro es único!</p>
+            <button id="another-photo" class="text-button" type="button">Ver otra foto <span aria-hidden="true">↻</span></button>
+          </div>
+        </article>
+        <p class="footer-note">Hecho con cariño para los amantes de los perros <span aria-hidden="true">♥</span></p>
+      </section>
+    </main>
+  </body>
+</html>
